@@ -1,15 +1,5 @@
 String getErrorString(String code){
 
-  /// A [FirebaseAuthException] maybe thrown with the following error code:
-  /// - **invalid-email**:
-  ///  - Thrown if the email address is not valid.
-  /// - **user-disabled**:
-  ///  - Thrown if the user corresponding to the given email has been disabled.
-  /// - **user-not-found**:
-  ///  - Thrown if there is no user corresponding to the given email.
-  /// - **wrong-password**:
-  ///  - Thrown if the password is invalid for the given email, or the account
-  ///    corresponding to the email does not have a password set.
   switch (code) {
     case 'invalid-email':
       return 'Seu e-mail é inválido.';
@@ -19,6 +9,12 @@ String getErrorString(String code){
       return 'Não há usuário com este e-mail.';
     case 'user-disabled':
       return 'Este usuário foi desabilitado.';
+    case 'email-already-in-use':
+      return 'Já existe um usuário com este e-mail.';
+    case 'operation-not-allowed':
+      return 'Operação não permitida.';
+    case 'weak-password':
+      return 'Indique uma senha mais forte.';
 
     default:
       return 'Um erro indefinido ocorreu.';

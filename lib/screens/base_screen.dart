@@ -3,9 +3,10 @@ import 'package:loja_virtual/screens/models/page_manager.dart';
 import 'package:provider/provider.dart';
 
 import 'common/custom_drawer/custom_drawer.dart';
-import 'login/login_screen.dart';
 
 class BaseScreen extends StatelessWidget {
+
+  static const String route_name = '/base';
 
   final PageController pageController = PageController();
 
@@ -17,7 +18,6 @@ class BaseScreen extends StatelessWidget {
         controller: pageController,
         physics: const NeverScrollableScrollPhysics(),
         children: [
-          LoginScreen(),
           Scaffold(
             drawer: CustomDrawer(),
             appBar: AppBar(

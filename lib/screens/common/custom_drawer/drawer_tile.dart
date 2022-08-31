@@ -3,7 +3,7 @@ import 'package:loja_virtual/screens/models/page_manager.dart';
 import 'package:provider/provider.dart';
 
 class DrawerTile extends StatelessWidget {
-  DrawerTile({required this.iconData, required this.title, required this.page});
+  const DrawerTile({required this.iconData, required this.title, required this.page});
 
   final IconData iconData;
   final String title;
