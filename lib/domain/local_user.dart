@@ -1,16 +1,16 @@
 class LocalUser {
-  String id;
-  String email;
-  String password;
-  String confirmPassowrd;
-  String fullName;
+  String? id;
+  String? email;
+  String? password;
+  String? confirmPassowrd;
+  String? fullName;
 
   LocalUser(
-      {this.id = '',
-      this.email = '',
-      this.password = '',
-      this.fullName = '',
-      this.confirmPassowrd = ''});
+      {this.id,
+      this.email,
+      this.password,
+      this.fullName,
+      this.confirmPassowrd});
 
   Map<String, dynamic> toJson() {
     return {'fullName': fullName, 'email': email};

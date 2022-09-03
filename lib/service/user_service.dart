@@ -58,7 +58,7 @@ class UserService extends ChangeNotifier {
     try {
       final UserCredential userCredential =
           await auth.signInWithEmailAndPassword(
-              email: localUser.email, password: localUser.password);
+              email: localUser.email!, password: localUser.password!);
 
       await _loadCurrentUser(firebaseUser: userCredential.user);
       onSuccess();
@@ -81,7 +81,7 @@ class UserService extends ChangeNotifier {
     try {
       final UserCredential userCredential =
           await auth.createUserWithEmailAndPassword(
-              email: localUser.email, password: localUser.password);
+              email: localUser.email!, password: localUser.password!);
 
       atualizarUserFirebaseConnected(userCredential.user!);
       localUser.id = firebaseUserConnected!.uid;
@@ -116,6 +116,6 @@ class UserService extends ChangeNotifier {
   }
 
   DocumentReference getDocumentReferenceFor(LocalUser user) {
-    return firestore.doc('users/' + user.id);
+    return firestore.doc('users/' + user.id!);
   }
 }

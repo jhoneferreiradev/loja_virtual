@@ -46,6 +46,7 @@ dependencies:
     sdk: flutter
   firebase_auth: ^3.7.0
   firebase_messaging: ^13.0.0
+  carousel_slider: ^4.1.1
 
 dev_dependencies:
   flutter_test:
