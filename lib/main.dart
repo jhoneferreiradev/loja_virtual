@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => UserService(), lazy: false),
-        ChangeNotifierProvider(create: (_) => ProductService(), lazy: false),
+        ChangeNotifierProvider(create: (_) => ProductService()),
       ],
       child: MaterialApp(
         title: 'Loja Virtual',

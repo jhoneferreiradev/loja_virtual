@@ -2,6 +2,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
 import '../../domain/product.dart';
+import 'components/product_size_widget.dart';
 
 class ProductScreen extends StatelessWidget {
   const ProductScreen({required this.product});
@@ -61,6 +62,22 @@ class ProductScreen extends StatelessWidget {
                   product.description!,
                   style: TextStyle(fontSize: 16),
                 ),
+                if (product.hasProductSizes)
+                  Padding(
+                    padding: EdgeInsets.only(top: 16, bottom: 8),
+                    child: Text(
+                      'Tamanhos',
+                      style:
+                          TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+                    ),
+                  ),
+                Wrap(
+                  spacing: 4,
+                  runSpacing: 4,
+                  children: product.productSizes!.map((productSize) {
+                    return ProductSizeWidget(productSize: productSize);
+                  }).toList(),
+                )
               ],
             ),
           ),

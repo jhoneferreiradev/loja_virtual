@@ -13,6 +13,7 @@ class ProductService extends ChangeNotifier {
   }
 
   String get search => _search;
+
   void set search(String value) {
     _search = value;
     notifyListeners();
@@ -23,8 +24,10 @@ class ProductService extends ChangeNotifier {
 
     filteredProducts.addAll(search.isEmpty
         ? allProducts
-        : allProducts.where((product) =>
-            product.name!.toLowerCase().contains(search.toLowerCase())).toList());
+        : allProducts
+            .where((product) =>
+                product.name!.toLowerCase().contains(search.toLowerCase()))
+            .toList());
 
     return filteredProducts;
   }
